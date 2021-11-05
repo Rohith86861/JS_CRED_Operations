@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href ="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.bundle.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+       
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+       <style>
+            .fa-google {
+  background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.div {
+  width: 100px;
+  height: 100px;
+}
+div > img {
+  max-width: 100%;
+  max-height: 220px;
+}
+.cart-header {
+    font-weight: bold;
+    font-size: 1.25em;
+    color: #333;
+}
+
+.cart-column {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin-right: 1.5em;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+.cart-row {
+    display: flex;
+}
+
+.cart-item {
+    width: 45%;
+}
+
+.cart-price {
+    width: 20%;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.cart-quantity {
+    width: 35%;
+}
+
+.cart-item-title {
+    color: #333;
+    margin-left: .5em;
+    font-size: 1.2em;
+}
+
+.cart-item-image {
+    width: 75px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.btn-danger {
+    color: white;
+    background-color: #EB5757;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #CC4C4C;
+}
+
+.cart-quantity-input {
+    height: 34px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid #56CCF2;
+    background-color: #eee;
+    color: #333;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 25px;
+}
+
+.cart-row:last-child {
+    border-bottom: 1px solid black;
+}
+
+.cart-row:last-child .cart-column {
+    border: none;
+}
+
+.cart-total {
+    text-align: end;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.cart-total-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: black;
+    margin-right: 20px;
+}
+
+.cart-total-price {
+    color: #333;
+    font-size: 1.1em;
+}
+
+.btn-purchase {
+    display: block;
+    margin: auto auto 20px 40px;
+    font-size: 1.5em;
+}
+.bt-close {
+    display: block;
+    margin: auto 40px 20px auto;
+    font-size: 1.5em;
+}
+.badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+  background-color: #c67605;
+}
+#lblCartCount {
+    font-size: 12px;
+    
+    background:rgba(0, 0, 255, 0.822);
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px; 
+}
+.cart-icon{
+  position:relative;
+top:10px;
+}
+*/
+</style>
+    </head>
+    <body>
+<br>
+<br>
+<br>
+<a href="index.html" class="btn btn-primary btn-lg" role="button" aria-disabled="true">Main Menu</a>
+<div style="float:right;"id="f"></div>
+<button class="btn" style="color:black"id="filter" type="submit" onclick="Openfilter()" ><i class="fas fa-filter fa-2x"></i>
+</button>
+</div>
+<div style="display:none; float: right;" id="filters">
+
+<button class="btn btn-primary" id="bchinese" onclick="chinese()">Chinese</button>
+<button class="btn btn-primary" id="ball" onclick="vall()">All</button>
+<button class="btn btn-primary" id="bnveg" onclick="nveg()">Non Veg</button>
+<button class="btn btn-primary" id="bveg"  onclick="veg()">Veg</button>
+<button class="btn" id="closef" type="submit" onclick="Closefilter()"><i class="fas fa-times-circle"></i></button>
+
+</div>
+
+<div class="container-fluid">
+
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark navbar-inverse navbar-fixed-top">
+
+      <a class="navbar-brand mx-3" href="#"> <Strong ><font size="+4" style="color:lightskyblue"><i>MTX</i></font></Strong>
+         <!-- <img src="download (1).png" alt="" width="30" height="24">-->
+        </a>
+
+
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link mx-3" href="index.html"><font size="+1">Home</font></a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mx-3" href="#" id="navbardrop" data-toggle="dropdown">
+              <font size="+1">Food</font>
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="non veg.html">Veg Food</a>
+            <a class="dropdown-item" href="non veg.html">Nonveg Food</a>
+            <a class="dropdown-item" href="non veg.html">Chinese Food</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mx-3" href="#" id="navbardrop" data-toggle="dropdown">
+              <font size="+1">Credentials</font>
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="login.html">Login</a>
+            <a class="dropdown-item" href="registration.html">Registration</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-3" href="testcrud.html"><font size="+1">Order to make</font></a>
+        </li>
+        
+      </ul>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+       <ul class="nav navbar-nav navbar-right me-auto">
+
+        
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">
+              <font size="+1">Contact</font>
+          </a>
+        </li>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+          <div class="cart-icon">
+            <i class="fas fa-shopping-cart fa-2x" style="color: #eee;" onclick="Openform()"></i>
+
+          <span class='badge badge-warning' id='lblCartCount'> 0 </span>
+          </div>
+          </li>
+        </ul>
+      </nav>
+      </div>
+
+    <br>
+
+          <br>
+        <div class="container" id="nveg">
+          <div class="row">
+            <div class="col-lg-4 d-flex align-items-stretch">          
+          <div class="card" style="width: 33rem;">
+            <img src="non veg1.webp" class="card-img-top" alt="..." height="220">
+            <div class="card-body">
+              <h5 class="card-title">Chicken 65</h5>
+              <p class="text-right" style="float:right;" ><span><i class="fas fa-rupee-sign"></i>
+              </span><font size="+1" class="card-price">220</font></p>
+              <p class="card-text">North Indian</p>
+              <button class="btn btn-primary" onclick="addToCartClicked(event)">Add to cart</button>
+            </div>
+          </div>
+          </div>
+          <div class="col-lg-4 d-flex align-items-stretch">  
+          <div class="card" style="width: 33rem;">
+            <img src="mutton biryani.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Mutton Biryani</h5>
+              <p class="text-right" style="float:right;" ><span><i class="fas fa-rupee-sign"></i>
+              </span><font size="+1" class="card-price">280</font></p>
+              <p class="card-text">North Indian</p>
+              <button class="btn btn-primary" onclick="addToCartClicked(event)">Add to cart</button>
+            </div>
+          </div>
+          </div>
+          <div class="col-lg-4 d-flex align-items-stretch">  
+          <div class="card" style="width: 33rem;">
+            <img src="chicken biryani.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Chicken Biryani</h5>
+              <p class="text-right" style="float:right;" ><span><i class="fas fa-rupee-sign"></i>
+              </span><font size="+1" class="card-price">250</font></p>
+              <p class="card-text">North Indian</p>
+              <button class="btn btn-primary" onclick="addToCartClicked(event)">Add to cart</button>
+            </div>
+          </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-lg-4 d-flex align-items-stretch">          
+          <div class="card" style="width: 33rem;">
+            <img src="tandoori chicken.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Chicken Tandoori</h5>
+              <p class="text-right" style="float:right;" ><span><i class="fas fa-rupee-sign"></i>
+              </span><font size="+1" class="card-price">180</font></p>
+              <p class="card-text">North Indian</p>
+              <button class="btn btn-primary" onclick="addToCartClicked(event)">Add to cart</button>
+            </div>
+          </div>
+          </div>
+          <div class="col-lg-4 d-flex align-items-stretch">  
+          <div class="card" style="width: 33rem;">
+            <img src="shawarma2.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Shawarma</h5>
+
+              <p class="text-right" style="float:right;" ><span><i class="fas fa-rupee-sign"></i>
+              </span><font size="+1" class="card-price">120</font></p>
+              <p class="card-text">North Indian</p>
+              <button class="btn btn-primary" onclick="addToCartClicked(event)">Add to cart</button>
+            </div>
+          </div>
+          </div>
+          <div class="col-lg-4 d-flex align-items-stretch">  
+          <div class="card" style="width: 33rem;">
+            <img src="legs.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Chicken Legs</h5>
+              <p class="text-right" style="float:right;" ><span><i class="fas fa-rupee-sign"></i>
+              </span><font size="+1" class="card-price">200</font></p>
+              <p class="card-text">North Indian</p>
+              <button href="#" class="btn btn-primary" onclick="addToCartClicked(event)">Add to cart</button>
+            </div>
+          </div>
+          </div>
+        </div>
+        </div>
+<br>
+<br>
+<div class="container" id="chinese">
+  <div class="row">
+    <div class="col-lg-4 d-flex align-items-stretch">          
+  <div class="card" style="width: 33rem;">
+    <img src="chinese1.webp" class="card-img-top" alt="..." height="220">
+    <div class="card-body">
+      <h5 class="card-title">Momos</h5>
+      <p class="text-right" style="float:right;" ><span><i class="fas fa-rupee-sign"></i>
+      </span><font size="+1" class="card-price">220</font></p>
+      <p class="card-text">North Indian, Asian</p>
+      <button class="btn btn-primary" onclick="addToCartClicked(event)">Add to cart</button>
+    </div>
+  </div>
+  </div>
+  <div class="col-lg-4 d-flex align-items-stretch">  
+  <div class="card" style="width: 33rem;">
+    <img src="noodels.jpeg" class="card-img-top" alt="..." height="220">
+    <div class="card-body">
+      <h5 class="card-title">Noodles</h5>
+      <p class="text-right" style="float:right;" ><span><i class="fas fa-rupee-sign"></i>
+      </span><font size="+1" class="card-price">220</font></p>
+      <p class="card-text">North Indian, Asian</p>
+      <button class="btn btn-primary" onclick="addToCartClicked(event)">Add to cart</button>
+    </div>
+  </div>
+  </div>
+  <div class="col-lg-4 d-flex align-items-stretch">  
+  <div class="card" style="width: 33rem;">
+    <img src="chniese 2.webp" class="card-img-top" alt="..." height="220">
+    <div class="card-body">
+      <h5 class="card-title">Chop Sticks</h5>
+      <h5 class="card-title">Chicken Biryani</h5>
+      <p class="text-right" style="float:right;" ><span><i class="fas fa-rupee-sign"></i>
+      </span><font size="+1" class="card-price">250</font></p>
+      <p class="card-text">North Indian, Asian</p>
+      <button class="btn btn-primary" onclick="addToCartClicked(event)">Add to cart</button>
+    </div>
+  </div>
+  </div>
+</div>
+<br>
+<br>
+<div class="row">
+    <div class="col-lg-4 d-flex align-items-stretch">          
+  <div class="card" style="width: 33rem;">
+    <img src="chinese3.webp" class="card-img-top" alt="..." height="220">
+    <div class="card-body">
+      <h5 class="card-title">Chinese pavilion</h5>
+      <p class="text-right" style="float:right;" ><span><i class="fas fa-rupee-sign"></i>
+      </span><font size="+1" class="card-price">180</font></p>
+      <p class="card-text">North Indian, Asian</p>
+      <button class="btn btn-primary" onclick="addToCartClicked(event)">Add to cart</button>
+    </div>
+  </div>
+  </div>
+  <div class="col-lg-4 d-flex align-items-stretch">  
+  <div class="card" style="width: 33rem;">
+    <img src="shawarma2.webp" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Shawarma</h5>
+
+      <p class="text-right" style="float:right;" ><span><i class="fas fa-rupee-sign"></i>
+      </span><font size="+1" class="card-price">120</font></p>
+      <p class="card-text">North Indian, Asian</p>
+      <button class="btn btn-primary" onclick="addToCartClicked(event)">Add to cart</button>
+    </div>
+  </div>
+  </div>
+  <div class="col-lg-4 d-flex align-items-stretch">  
+  <div class="card" style="width: 33rem;">
+    <img src="chinese4.jpeg" class="card-img-top" alt="..." height="220">
+    <div class="card-body">
+      <h5 class="card-title">Manchuriya</h5>
+      <p class="text-right" style="float:right;" ><span><i class="fas fa-rupee-sign"></i>
+      </span><font size="+1" class="card-price">200</font></p>
+      <p class="card-text">North Indian, Asian</p>
+      <button href="#" class="btn btn-primary" onclick="addToCartClicked(event)">Add to cart</button>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+<br>
+<br>
+<div class="container" id="veg">
+  <div class="row">
+    <div class="col-lg-4 d-flex align-items-stretch">          
+  <div class="card" style="width: 33rem;">
+    <img src="v1.webp" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Veg Rolls</h5>
+      <p class="text-right" style="float:right;" ><span><i class="fas fa-rupee-sign"></i>
+      </span><font size="+1" class="card-price">200</font></p>
+      <p class="card-text">North Indian</p>
+      <button href="#" class="btn btn-primary" onclick="addToCartClicked(event)">Add to cart</button>
+    </div>
+  </div>
+  </div>
+  <div class="col-lg-4 d-flex align-items-stretch">  
+  <div class="card" style="width: 33rem;">
+    <img src="v3.webp" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Veg Rolls</h5>
+      <p class="text-right" style="float:right;" ><span><i class="fas fa-rupee-sign"></i>
+      </span><font size="+1" class="card-price">200</font></p>
+      <p class="card-text">North Indian</p>
+      <button href="#" class="btn btn-primary" onclick="addToCartClicked(event)">Add to cart</button>
+    </div>
+  </div>
+  </div>
+  <div class="col-lg-4 d-flex align-items-stretch">  
+  <div class="card" style="width: 33rem;">
+    <img src="v4.webp" class="card-img-top" alt="..." height="220">
+    <div class="card-body">
+      <h5 class="card-title">Puri</h5>
+      <h5 class="card-title">Veg Rolls</h5>
+      <p class="text-right" style="float:right;" ><span><i class="fas fa-rupee-sign"></i>
+      </span><font size="+1" class="card-price">200</font></p>
+      <p class="card-text">North Indian</p>
+      <button href="#" class="btn btn-primary" onclick="addToCartClicked(event)">Add to cart</button>
+    </div>
+  </div>
+  </div>
+</div>
+<br>
+<br>
+<div class="row">
+    <div class="col-lg-4 d-flex align-items-stretch">          
+  <div class="card" style="width: 33rem;">
+    <img src="v5.webp" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Dosa</h5>
+      <h5 class="card-title">Veg Rolls</h5>
+      <p class="text-right" style="float:right;" ><span><i class="fas fa-rupee-sign"></i>
+      </span><font size="+1" class="card-price">200</font></p>
+      <p class="card-text">North Indian</p>
+      <button href="#" class="btn btn-primary" onclick="addToCartClicked(event)">Add to cart</button>
+    </div>
+  </div>
+  </div>
+  <div class="col-lg-4 d-flex align-items-stretch">  
+  <div class="card" style="width: 33rem;">
+    <img src="shawarma2.webp" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Veg Salad Shawarma</h5>
+      <h5 class="card-title">Veg Rolls</h5>
+      <p class="text-right" style="float:right;" ><span><i class="fas fa-rupee-sign"></i>
+      </span><font size="+1" class="card-price">200</font></p>
+      <p class="card-text">North Indian</p>
+      <button href="#" class="btn btn-primary" onclick="addToCartClicked(event)">Add to cart</button>
+    </div>
+  </div>
+  </div>
+  <div class="col-lg-4 d-flex align-items-stretch">  
+  <div class="card" style="width: 33rem;">
+    <img src="v7.webp" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Chat</h5>
+      <h5 class="card-title">Veg Rolls</h5>
+      <p class="text-right" style="float:right;" ><span><i class="fas fa-rupee-sign"></i>
+      </span><font size="+1" class="card-price">200</font></p>
+      <p class="card-text">North Indian</p>
+      <button href="#" class="btn btn-primary" onclick="addToCartClicked(event)">Add to cart</button>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+<br>
+
+<center>
+<section class="container content-section" id = "form1" style="display:none; background-image: linear-gradient(to right, rgb(132, 169, 226) , rgb(154, 202, 235)); width:70%; position:fixed; top:140px; left:190px;">
+  <h2 class="section-header">CART</h2>
+  <div class="cart-row">
+      <span class="cart-item cart-header cart-column">ITEM</span>
+      <span class="cart-price cart-header cart-column">PRICE</span>
+      <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+  </div>
+<div class="cart-items">
+  </div>
+ <div class="cart-total">
+      <strong class="cart-total-title">Total</strong>
+      <font size="+1"><span class="cart-total-price">$0</span></font>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+  <button class="btn btn-warning bt-close" id="close" type="submit" onclick="Closeform()" >Close</button>
+    </div>
+    <div class="col">
+  <button class="btn btn-primary btn-purchase" type="button" >PURCHASE</button>
+    </div>
+
+  </div>
+</section>
+</center>
+
+
+<br>
+<br>
+
+<footer class="text-center text-lg-start bg-dark text-muted">
+  <!-- Section: Social media -->
+  <section
+  class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+  >
+  <!-- Left -->
+  <div class="me-5 d-none d-lg-block">
+      <span>Get connected with us on social networks:</span>
+  </div>
+  <!-- Left -->
+
+  <!-- Right -->
+  <div>
+      <a href="" class="me-4 text-reset">
+      <i class="fab fa-facebook-f" style="color: rgba(41, 63, 194, 0.795);"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+      <i class="fab fa-twitter" style="color: lightskyblue"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+      <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+      <i class="fab fa-instagram" style="color: hsla(303, 69%, 60%, 0.541);"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+      <i class="fab fa-linkedin" style="color: rgb(39, 79, 209)"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+      <i class="fab fa-github"></i>
+      </a>
+  </div>
+  <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+  <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+          <i class="fas fa-hamburger"></i> Hungry.com
+          </h6>
+          <p>
+          The one stop place to enjoy the wide range of burgers in the town.
+          </p>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+          Products
+          </h6>
+          <p>
+          <a href="#popular" class="text-reset">Most popular</a>
+          </p>
+          <p>
+          <a href="veg.html" class="text-reset">Veg Dishes</a>
+          </p>
+          <p>
+          <a href="non-veg.html" class="text-reset">Non-veg Dishes</a>
+          </p>
+          <p>
+          <a href="chinese.html" class="text-reset">Chinese Dishes</a>
+          </p>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+          Useful links
+          </h6>
+          <p>
+          <a href="contact.html" class="text-reset">Know Pricing</a>
+          </p>
+          <p>
+          <a href="contact.html" class="text-reset">Contact</a>
+          </p>
+          <p>
+          <a href="contact.html" class="text-reset">Orders</a>
+          </p>
+          <p>
+          <a href="contact.html" class="text-reset">Help</a>
+          </p>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+          Contact
+          </h6>
+          <p><i class="fas fa-home me-3"></i> Hyderabad, Telangana 500019, India</p>
+          <p>
+          <i class="fas fa-envelope me-3"></i>
+          info@hungry.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+      </div>
+      <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+  </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+  © 2021 Copyright:
+  <a class="text-reset fw-bold" href="https://www.mtxb2b.com/s/">Mtxb2b.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<script>
+  if (document.readyState == 'loading') {
+    document.addEventListener('DOMContentLoaded', ready)
+} else {
+    ready()
+}
+function Openfilter()
+{
+//document.getElementById("form1").style.visibility = "visible";
+document.getElementById("filter").style.display = "none";
+document.getElementById("closef").style.display = "block";
+document.getElementById('filters').style.display = '';
+}
+function Closefilter()
+{
+//document.getElementById("form1").style.visibility = "visible";
+document.getElementById("filter").style.display = "block";
+document.getElementById("closef").style.display = "none";
+document.getElementById('filters').style.display = "none";
+}
+function chinese(){
+  document.getElementById('nveg').style.display = "none";
+  document.getElementById('veg').style.display = "none";
+  document.getElementById('chinese').style.display = '';
+}
+function nveg(){
+  document.getElementById('nveg').style.display = "";
+  document.getElementById('veg').style.display = "none";
+  document.getElementById('chinese').style.display = 'none';
+}
+function veg(){
+  document.getElementById('nveg').style.display = "none";
+  document.getElementById('veg').style.display = "";
+  document.getElementById('chinese').style.display = 'none';
+}
+function vall(){
+  document.getElementById('nveg').style.display = '';
+  document.getElementById('veg').style.display = '';
+  document.getElementById('chinese').style.display = '';
+}
+function Openform()
+{
+//document.getElementById("form1").style.visibility = "visible";
+//document.getElementById("add").style.display = "none";
+//document.getElementById("close").style.display = "block";
+document.getElementById('form1').style.display = '';
+}
+function Closeform()
+{
+//document.getElementById("form1").style.visibility = "visible";
+//document.getElementById("add").style.display = "block";
+//document.getElementById("close").style.display = "none";
+document.getElementById('form1').style.display = "none";
+}
+function ready() {
+    var removeCartItemButtons = document.getElementsByClassName('btn-danger')
+    for (var i = 0; i < removeCartItemButtons.length; i++) {
+        var button = removeCartItemButtons[i]
+        button.addEventListener('click', removeCartItem)
+    }
+
+    var quantityInputs = document.getElementsByClassName('cart-quantity-input')
+    for (var i = 0; i < quantityInputs.length; i++) {
+        var input = quantityInputs[i]
+        input.addEventListener('change', quantityChanged)
+    }
+
+    var addToCartButtons = document.getElementsByClassName('shop-item-button')
+    for (var i = 0; i < addToCartButtons.length; i++) {
+        var button = addToCartButtons[i]
+        button.addEventListener('click', addToCartClicked)
+    }
+
+    document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
+}
+
+function purchaseClicked() {
+
+
+    alert('Thank you for your purchase')
+    var cartItems = document.getElementsByClassName('cart-items')[0]
+    while (cartItems.hasChildNodes()) {
+        cartItems.removeChild(cartItems.firstChild)
+    }
+    updateCartTotal()
+}
+
+function removeCartItem(event) {
+    var buttonClicked = event.target
+    buttonClicked.parentElement.parentElement.remove()
+    document.getElementById('lblCartCount').innerHTML=parseInt(parseInt(document.getElementById('lblCartCount').innerText) - parseInt(1));
+    updateCartTotal()
+}
+
+function quantityChanged(event) {
+    var input = event.target
+    if (isNaN(input.value) || input.value <= 0) {
+        input.value = 1
+    }
+    updateCartTotal()
+}
+
+function addToCartClicked(event) {
+    var button = event.target
+    var shopItem = button.parentElement.parentElement
+    var title = shopItem.getElementsByClassName('card-title')[0].innerText
+    var price = shopItem.getElementsByClassName('card-price')[0].innerText
+    var imageSrc = shopItem.getElementsByClassName('card-img-top')[0].src
+
+    addItemToCart(title, price, imageSrc)
+    updateCartTotal()
+}
+
+function addItemToCart(title, price, imageSrc) {
+    var cartRow = document.createElement('div')
+    cartRow.classList.add('cart-row')
+    var cartItems = document.getElementsByClassName('cart-items')[0]
+    var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+    for (var i = 0; i < cartItemNames.length; i++) {
+        if (cartItemNames[i].innerText == title) {
+            alert('This item is already added to the cart')
+            return
+        }
+    }
+    var cartRowContents = `
+        <div class="cart-item cart-column">
+            <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
+            <span class="cart-item-title">${title}</span>
+        </div>
+        <span class="cart-price cart-column">${price}</span>
+        <div class="cart-quantity cart-column">
+            <input class="cart-quantity-input" type="number" value="1">
+            <button class="btn btn-danger" type="button">REMOVE</button>
+        </div>`
+    cartRow.innerHTML = cartRowContents
+    cartItems.append(cartRow)
+    document.getElementById('lblCartCount').innerHTML=parseInt(parseInt(document.getElementById('lblCartCount').innerText) + parseInt(1));
+    cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
+    cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
+}
+
+function updateCartTotal() {
+    var cartItemContainer = document.getElementsByClassName('cart-items')[0]
+    var cartRows = cartItemContainer.getElementsByClassName('cart-row')
+    var total = 0
+    for (var i = 0; i < cartRows.length; i++) {
+        var cartRow = cartRows[i]
+        var priceElement = cartRow.getElementsByClassName('cart-price')[0]
+        var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+        var price = parseFloat(priceElement.innerText.replace('$', ''))
+        var quantity = quantityElement.value
+        total = total + (price * quantity)
+    }
+    total = Math.round(total * 100) / 100
+    document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
+}
+</script>
+
+</body>
+</html>
